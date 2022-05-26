@@ -29,26 +29,25 @@
 - List products attached to requesting user
 
 # Endpoint lists 
-+--------+-----------+-----------------------------+------------------+
-| Domain | Method    | URI                         | Name             |
-+--------+-----------+-----------------------------+------------------+
-|        | POST      | api/addProductToUserList    |                  | 
-|        |           |                             |                  |
-|        | GET|HEAD  | api/products                | products.index   |
-|        |           |                             |                  |
-|        | POST      | api/products                | products.store   |
-|        |           |                             |                  |
-|        | GET|HEAD  | api/products/{product}      | products.show    |
-|        |           |                             |                  |
-|        | PUT|PATCH | api/products/{product}      | products.update  |
-|        |           |                             |                  |
-|        | DELETE    | api/products/{product}      | products.destroy |
-|        |           |                             |                  |
-|        | POST      | api/removeproduct           |                  |
-|        |           |                             |                  |
-|        | GET|HEAD  | api/userproducts            |                  |
-|        |           |                             |                  |
-+--------+-----------+-----------------------------+------------------+
+
+|  METHOD | URI | NAME
+|---------|-----|------------------------------
+|  POST | api/addProductToUserList | 
+|---------|-----|------------------------------
+|  GET|HEAD  |  api/products | 
+|---------|-----|------------------------------
+|  POST | api/products | 
+|---------|-----|------------------------------
+|  GET|HEAD | api/products/{product} | 
+|---------|-----|------------------------------
+|  PUT|PATCH | api/products/{product} | 
+|---------|-----|------------------------------
+|  DELETE | api/products/{product} | 
+|---------|-----|------------------------------
+|  POST | api/removeproduct | 
+|---------|-----|------------------------------
+|  GET|HEAD | api/userproducts | 
+|---------|-----|------------------------------
 
 ## Create and seed database
 
@@ -74,5 +73,14 @@ find users and tokens in storage/logs/laravel.log
 
 ## Make request to endpoints
 
+
+
+
 ## Run tests
+
+You can run the tests by running the command below in your terminal 
+```
+./vendor/bin/phpunit
+```
+This should be done from the root directory of the application.
 
