@@ -18,7 +18,17 @@
 git clone https://github.com/jdotcole233/helixchallenge.git
 ```
 * You can run ```composer update``` after cloning to install dependencies in the composer.json file
+* create a cp of ```.env.example`` using this cmd:
+```
+  cp .env.example .env
+```
+* The following command will generate an app key if it doesn't exist.
+```
+php artisan key:gen
+```
+
 * Go to [Databases](#create-and-seed-database)
+* Ready to test the app.
 
 
 ## Endpoints
