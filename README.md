@@ -93,13 +93,13 @@ Examples: You can also make a curl request to the server using
 
 - GET request (example)
 ```
-curl http://localhost:8000/api/products -H "Accept: application/json" -H "Authorization: Bearer {TOKEN}"
+curl http://{HOST}:{PORT}/api/products -H "Accept: application/json" -H "Authorization: Bearer {TOKEN}"
 ```
 
 - POST request (example)
 
 ```
-curl -X POST http://localhost:8000/api/products -H "Accept: application/json" -H "Authorization: Bearer 163|XcYVTcUeGEN5s9GZkLC8J4UzkqGjUqiSv65xfuS7" -H "Content-type: application/json"  -d '{"name" : "Air Conditioner", "description" : "Fast freexing Air Conditioner", "price" : 234.00, "image" : "" }'
+curl -X POST http://{HOST}:{PORT}/api/products -H "Accept: application/json" -H "Authorization: Bearer {TOKEN}" -H "Content-type: application/json"  -d '{"name" : "Air Conditioner", "description" : "Fast freexing Air Conditioner", "price" : 234.00, "image" : "" }'
 ```
 
 
