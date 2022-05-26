@@ -33,13 +33,13 @@
 |  METHOD | URI | NAME
 |---------|-----|------------------------------
 |  POST | api/addProductToUserList | 
-|  GET|HEAD  |  api/products | 
+|  GET  |  api/products | 
 |  POST | api/products | 
-|  GET|HEAD | api/products/{product} | 
-|  PUT|PATCH | api/products/{product} | 
+|  GET | api/products/{product} | 
+|  PUT | api/products/{product} | 
 |  DELETE | api/products/{product} | 
 |  POST | api/removeproduct | 
-|  GET|HEAD | api/userproducts | 
+|  GET | api/userproducts | 
 
 ## Create and seed database
 
