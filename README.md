@@ -72,7 +72,7 @@ You can use any tool to simulate HTTP request to the server.
 ### HTTP request tools
 - POSTMAN
 - Insomnia
-- Advance
+- Advanced
 
 
 - Start the server from the parent directory of the application using 
@@ -87,7 +87,7 @@ All request to the Endpoints must have the following headers
  Accept: application/json
  Authorization: Bearer $token
 ```
-tokens can be found [here](#find-tokens-here)
+tokens can be found [here](#find-tokens-here) under [Create and seed database](#create-and-seed-database) section
 
 Example you can also make a curl request to the server using
 
