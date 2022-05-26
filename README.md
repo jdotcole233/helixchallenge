@@ -57,6 +57,8 @@ To enable you test the endpoints with applications such as postman use the follo
 ```
 php artisan db:seed
 ```
+
+## find tokens here
 After this command, 2 users will be created in the database. The users and their generated tokens will be written to laravel.log file
 ```
 find users and tokens in storage/logs/laravel.log
@@ -65,6 +67,27 @@ find users and tokens in storage/logs/laravel.log
 
 ## Make request to endpoints
 
+You can use any tool to simulate HTTP request to the server.
+
+### HTTP request tools
+- POSTMAN
+- Insomnia
+- Advance
+
+
+- Start the server from the parent directory of the application using 
+
+```
+php artisan serve
+```
+
+All request to the Endpoints must have the following headers
+
+```
+ Accept: application/json
+ Authorization: Bearer $token
+```
+tokens can be found [here](#find-tokens-here)
 
 
 
