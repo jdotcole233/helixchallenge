@@ -1,64 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Helix Sleep REST API Code Challenge
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Contents
+* [Requirements] (#requirements)
+* [Endpoints] (#endpoints)
+* [Enpoint list] (#endpoint-lists)
+* [Create and seed database] (#create-and-seed-database)
+* [Make request to endpoints] (#make-request-to-endpoints)
+* [Run tests] (#run-test)
 
-## About Laravel
+## Requirements
+* "php": "^7.3|^8.0",
+* "laravel/sanctum": "^2.15",
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Set up
+* Clone up from github
+* You can run composer upate after cloning to install dependencies in the composer.json file
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Endpoints
+- Add product  
+- Update product
+- Delete product
+- Get product
+- Get list of all products
+- Attach product to requesting user
+- Remove product from requesting user
+- List products attached to requesting user
 
-## Learning Laravel
+# Endpoint lists 
++--------+-----------+-----------------------------+------------------+---------------------------------------------------------------------+------------------------------------------+
+| Domain | Method    | URI                         | Name             | Action                                                              | Middleware                               |
++--------+-----------+-----------------------------+------------------+---------------------------------------------------------------------+------------------------------------------+
+|        | POST      | api/addProductToUserList    |                  | App\Http\Controllers\API\UserProductController@addProductToUserList | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | api/products                | products.index   | App\Http\Controllers\API\ProductController@index                    | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | POST      | api/products                | products.store   | App\Http\Controllers\API\ProductController@store                    | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | api/products/{product}      | products.show    | App\Http\Controllers\API\ProductController@show                     | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | PUT|PATCH | api/products/{product}      | products.update  | App\Http\Controllers\API\ProductController@update                   | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | DELETE    | api/products/{product}      | products.destroy | App\Http\Controllers\API\ProductController@destroy                  | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | POST      | api/removeproduct           |                  | App\Http\Controllers\API\UserProductController@removeUserProduct    | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | api/userproducts            |                  | App\Http\Controllers\API\UserProductController@getUserProducts      | api                                      |
+|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
++--------+-----------+-----------------------------+------------------+---------------------------------------------------------------------+------------------------------------------+
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Create and seed database
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  After the project has been cloned, You can create a database in MySQL and complete the DB configuration in your .env file.
 
-## Laravel Sponsors
+- Migration files are located in database/migrations
+- Use the migrate to create schemas in your linked DB.
+- Use the db:seed command to pre-populate the DB.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Make request to endpoints
 
-### Premium Partners
+## Run tests
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

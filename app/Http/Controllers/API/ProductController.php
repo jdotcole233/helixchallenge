@@ -16,7 +16,7 @@ class ProductController extends BaseController
 {
     public function index()
     {
-        $products = Product::get();
+        $products = Product::all();
 
         if (!$products)
         {
