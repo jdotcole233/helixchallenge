@@ -1,12 +1,12 @@
 ## Helix Sleep REST API Code Challenge
 
 ## Contents
-* [Requirements] (#requirements)
-* [Endpoints] (#endpoints)
-* [Enpoint list] (#endpoint-lists)
-* [Create and seed database] (#create-and-seed-database)
-* [Make request to endpoints] (#make-request-to-endpoints)
-* [Run tests] (#run-test)
+* [Requirements](#requirements)
+* [Endpoints](#endpoints)
+* [Enpoint list](#endpoint-lists)
+* [Create and seed database](#create-and-seed-database)
+* [Make request to endpoints](#make-request-to-endpoints)
+* [Run tests](#run-test)
 
 ## Requirements
 * "php": "^7.3|^8.0",
