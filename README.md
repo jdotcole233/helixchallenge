@@ -54,6 +54,9 @@ php artisan key:gen
 |  POST | api/removeproduct | 
 |  GET | api/userproducts | 
 
+![route list](routelist.png)
+
+
 ## Create and seed database
 
 After the project has been cloned, You can create a database in MySQL and complete the DB configuration in your ```.env``` file.
@@ -119,7 +122,7 @@ curl -X POST http://{HOST}:{PORT}/api/products -H "Accept: application/json" -H 
 
 ## Run tests
 
-You can run the tests by running the command below in your terminal 
+You can run the tests by running the command below in your terminal
 ```
 ./vendor/bin/phpunit
 ```
