@@ -13,8 +13,11 @@
 * "laravel/sanctum": "^2.15",
 
 ## Set up
-* Clone up from github
-* You can run composer upate after cloning to install dependencies in the composer.json file
+* Clone the application from github
+```
+git clone https://github.com/jdotcole233/helixchallenge.git
+```
+* You can run ```composer update``` after cloning to install dependencies in the composer.json file
 * Go to [Databases](#create-and-seed-database)
 
 
