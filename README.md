@@ -89,7 +89,7 @@ All request to the Endpoints must have the following headers
 ```
 tokens can be found [here](#find-tokens-here) under [Create and seed database](#create-and-seed-database) section
 
-Example you can also make a curl request to the server using
+Examples: You can also make a curl request to the server using
 
 - GET request (example)
 ```
