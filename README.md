@@ -33,11 +33,11 @@
 |  METHOD | URI | NAME
 |---------|-----|------------------------------
 |  POST | api/addProductToUserList | 
-|  GET  |  api/products | 
-|  POST | api/products | 
-|  GET | api/products/{product} | 
-|  PUT | api/products/{product} | 
-|  DELETE | api/products/{product} | 
+|  GET  |  api/products |  products.index
+|  POST | api/products |  products.store
+|  GET | api/products/{product} | products.show
+|  PUT | api/products/{product} | products.update
+|  DELETE | api/products/{product} | products.destroy
 |  POST | api/removeproduct | 
 |  GET | api/userproducts | 
 
