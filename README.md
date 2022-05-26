@@ -15,6 +15,7 @@
 ## Set up
 * Clone up from github
 * You can run composer upate after cloning to install dependencies in the composer.json file
+* Go to [Databases](#create-and-seed-database)
 
 
 ## Endpoints
@@ -28,34 +29,48 @@
 - List products attached to requesting user
 
 # Endpoint lists 
-+--------+-----------+-----------------------------+------------------+---------------------------------------------------------------------+------------------------------------------+
-| Domain | Method    | URI                         | Name             | Action                                                              | Middleware                               |
-+--------+-----------+-----------------------------+------------------+---------------------------------------------------------------------+------------------------------------------+
-|        | POST      | api/addProductToUserList    |                  | App\Http\Controllers\API\UserProductController@addProductToUserList | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | GET|HEAD  | api/products                | products.index   | App\Http\Controllers\API\ProductController@index                    | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | POST      | api/products                | products.store   | App\Http\Controllers\API\ProductController@store                    | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | GET|HEAD  | api/products/{product}      | products.show    | App\Http\Controllers\API\ProductController@show                     | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | PUT|PATCH | api/products/{product}      | products.update  | App\Http\Controllers\API\ProductController@update                   | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | DELETE    | api/products/{product}      | products.destroy | App\Http\Controllers\API\ProductController@destroy                  | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | POST      | api/removeproduct           |                  | App\Http\Controllers\API\UserProductController@removeUserProduct    | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-|        | GET|HEAD  | api/userproducts            |                  | App\Http\Controllers\API\UserProductController@getUserProducts      | api                                      |
-|        |           |                             |                  |                                                                     | App\Http\Middleware\Authenticate:sanctum |
-+--------+-----------+-----------------------------+------------------+---------------------------------------------------------------------+------------------------------------------+
++--------+-----------+-----------------------------+------------------+
+| Domain | Method    | URI                         | Name             |
++--------+-----------+-----------------------------+------------------+
+|        | POST      | api/addProductToUserList    |                  | 
+|        |           |                             |                  |
+|        | GET|HEAD  | api/products                | products.index   |
+|        |           |                             |                  |
+|        | POST      | api/products                | products.store   |
+|        |           |                             |                  |
+|        | GET|HEAD  | api/products/{product}      | products.show    |
+|        |           |                             |                  |
+|        | PUT|PATCH | api/products/{product}      | products.update  |
+|        |           |                             |                  |
+|        | DELETE    | api/products/{product}      | products.destroy |
+|        |           |                             |                  |
+|        | POST      | api/removeproduct           |                  |
+|        |           |                             |                  |
+|        | GET|HEAD  | api/userproducts            |                  |
+|        |           |                             |                  |
++--------+-----------+-----------------------------+------------------+
 
 ## Create and seed database
 
-  After the project has been cloned, You can create a database in MySQL and complete the DB configuration in your .env file.
+After the project has been cloned, You can create a database in MySQL and complete the DB configuration in your .env file.
 
 - Migration files are located in database/migrations
-- Use the migrate to create schemas in your linked DB.
-- Use the db:seed command to pre-populate the DB.
+- Seeders are located in migrations/seeders
+- Factory files are located in database/factoris
+
+The command below creates the database schema.
+```
+php artisan migrate
+```
+To enable you test the endpoints with applications such as postman use the following command to pre-populate the database.
+```
+php artisan db:seed
+```
+After this command, 2 users will be created in the database. The users and their generated tokens will be written to laravel.log file
+```
+find users and tokens in storage/logs/laravel.log
+```
+
 
 ## Make request to endpoints
 
