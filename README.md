@@ -56,23 +56,23 @@ php artisan key:gen
 
 ## Create and seed database
 
-After the project has been cloned, You can create a database in MySQL and complete the DB configuration in your .env file.
+After the project has been cloned, You can create a database in MySQL and complete the DB configuration in your ```.env``` file.
 
-- Migration files are located in database/migrations
-- Seeders are located in migrations/seeders
-- Factory files are located in database/factoris
+- Migration files are located in ```database/migrations```
+- Seeders are located in ```migrations/seeders```
+- Factory files are located in ```database/factories```
 
-The command below creates the database schema.
+The command below creates the database schema programtically using the migration files.
 ```
 php artisan migrate
 ```
-To enable you test the endpoints with applications such as postman use the following command to pre-populate the database.
+To enable you test the endpoints with http simulation applications such as ```postman``` use the following command to pre-populate the database.
 ```
 php artisan db:seed
 ```
 
 ## find tokens here
-After this command, 2 users will be created in the database. The users and their generated tokens will be written to laravel.log file
+After this command: 2 users, 20 products and 10 products attached to each user will be created in your database. The users and their generated tokens will be written to laravel.log file
 ```
 find users and tokens in storage/logs/laravel.log
 ```
