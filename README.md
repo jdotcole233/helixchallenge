@@ -18,7 +18,7 @@
 git clone https://github.com/jdotcole233/helixchallenge.git
 ```
 * You can run ```composer update``` after cloning to install dependencies in the composer.json file
-* create a copy  of ```.env.example``` using this cmd:
+* create a copy  of ```.env.example``` using this cmd from the root directory of the application.
 ```
   cp .env.example .env
 ```
